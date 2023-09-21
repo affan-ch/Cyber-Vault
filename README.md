@@ -8,10 +8,11 @@ Cyber Vault is a state-of-the-art password manager application designed to simpl
 4. [Flutter Installation](#flutter-installation)
 5. [Project Setup](#project-setup)
 6. [Project Team](#project-team)
-7. [Contributing](#contributing)
-8. [Support](#support)
-9. [License](#license)
-10. [Acknowledgments](#acknowledgments)
+7. [Code of Conduct](#code-of-conduct)
+8. [Contributing](#contributing)
+9. [Support](#support)
+10. [License](#license)
+11. [Acknowledgments](#acknowledgments)
 
 ## Key Features  
 ### Password Vault: 
@@ -221,7 +222,7 @@ For more information and detailed documentation, visit the [Flutter website](htt
 3. **Navigate to the Project Folder**: Change your current directory to the project folder:
 
    ```bash
-   cd your-project
+   cd Cyber-Vault
    ```
 
 4. **Install Dependencies**: Install project dependencies using Flutter's package manager:
@@ -238,9 +239,13 @@ For more information and detailed documentation, visit the [Flutter website](htt
    
 ## Project Team 
 - [M. Affan Maqsood](https://github.com/muhammadaffanmaqsood)  
-- [Sultan Noorudin](https://github.com/SultanNoorudDin) 
+- [Sultan NoorudDin](https://github.com/SultanNoorudDin) 
 - [Yasir Mehmood](https://github.com/Yasir-Mahmood-124) 
 - [Umer Farooq](https://github.com/Itxumar) 
+
+## Code of Conduct
+
+We are committed to fostering an inclusive and welcoming community. Please take a moment to review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand our expectations for behavior within this project.
    
 ## Contributing
 
