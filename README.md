@@ -2,17 +2,16 @@
 Cyber Vault is a state-of-the-art password manager application designed to simplify and enhance the security of password management for individuals and organizations. In an age of increasing digital threats and the need for robust data protection, Cyber Vault offers a comprehensive solution to safeguard sensitive information, promote password hygiene, and provide a seamless user experience.
 
 ## Table of Content
-1. [Cyber Vault](#cyber-vault)
-2. [Key Features](#key-features)
-3. [Functional Requirements](#functional-requirements)
-4. [Non-Functional Requirements](#non-functional-requirements)
-5. [Flutter Installation](#flutter-installation)
-6. [Project Setup](#project-setup)
-7. [Project Team](#project-team)
-8. [Contributing](#contributing)
-9. [Support](#support)
-10. [License](#license)
-11. [Acknowledgments](#acknowledgments)
+1. [Key Features](#key-features)
+2. [Functional Requirements](#functional-requirements)
+3. [Non-Functional Requirements](#non-functional-requirements)
+4. [Flutter Installation](#flutter-installation)
+5. [Project Setup](#project-setup)
+6. [Project Team](#project-team)
+7. [Contributing](#contributing)
+8. [Support](#support)
+9. [License](#license)
+10. [Acknowledgments](#acknowledgments)
 
 ## Key Features  
 ### Password Vault: 
