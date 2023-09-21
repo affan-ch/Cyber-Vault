@@ -15,25 +15,26 @@ Cyber Vault is a state-of-the-art password manager application designed to simpl
 11. [Acknowledgments](#acknowledgments)
 
 ## Key Features  
--  **Password Vault:** Cyber Vault provides a secure and user-friendly vault to store and manage a wide range of sensitive information, including: 
---  **Passwords:** Users can securely store and organize their passwords for various online accounts, ensuring that each password is strong and unique. 
--- **Credit Card Information:** Users can conveniently manage credit card details, including card numbers, expiration dates, and CVVs, with encryption to safeguard financial data. 
---  **Personal Identity Information:** Securely store personal identity information for quick and secure online form filling. 
---  **Secure Notes and Documents:** Users can keep important notes and documents alongside passwords, ensuring that all sensitive data is easily accessible yet well-protected. 
- -  **Security and Password Health:**  
- --  **Strong Encryption:** Cyber Vault uses robust encryption algorithms (e.g., AES-256) to protect user data both in storage and during transmission. 
---  **Password Strength Analysis:** Users receive real-time feedback on password strength, helping them create stronger and more secure passwords. 
---  **Password Reuse Detection:** The application identifies and alerts users about password reuse across multiple accounts, reducing the risk of security breaches. 
---  **Password Change Recommendations:** Cyber Vault provides recommendations for changing weak or commonly used passwords, along with tools to generate strong, unique replacements.
+### Password Vault: 
+Cyber Vault provides a secure and user-friendly vault to store and manage a wide range of sensitive information, including:
+- **Passwords:** Users can securely store and organize their passwords for various online accounts, ensuring that each password is strong and unique. 
+- **Credit Card Information:** Users can conveniently manage credit card details, including card numbers, expiration dates, and CVVs, with encryption to safeguard financial data. 
+- **Personal Identity Information:** Securely store personal identity information for quick and secure online form filling. 
+- **Secure Notes and Documents:** Users can keep important notes and documents alongside passwords, ensuring that all sensitive data is easily accessible yet well-protected. 
+### Security and Password Health:
+-  **Strong Encryption:** Cyber Vault uses robust encryption algorithms (e.g., AES-256) to protect user data both in storage and during transmission. 
+-  **Password Strength Analysis:** Users receive real-time feedback on password strength, helping them create stronger and more secure passwords. 
+- **Password Reuse Detection:** The application identifies and alerts users about password reuse across multiple accounts, reducing the risk of security breaches. 
+-  **Password Change Recommendations:** Cyber Vault provides recommendations for changing weak or commonly used passwords, along with tools to generate strong, unique replacements.
 
--  **User Convenience:**  
---  **Browser Integration:** A seamless browser extension integrates with popular web browsers (e.g., Chrome, Brave, Firefox, Safari) to offer auto-fill capabilities for passwords, credit card details, personal identity information, and documents, enhancing user convenience. 
---  **Password Generation:** Users can generate strong, unique passwords with ease, eliminating the hassle of creating and remembering complex passwords. 
---  **Search and Organization:** Cyber Vault offers a robust search functionality and the ability to organize passwords and data into folders or categories for efficient data management. 
--  **Enhanced Security Measures:**  
---  **Biometric Authentication:** Users have the option to use biometric authentication (e.g., fingerprint, face recognition) for secure login. 
---  **Two-Factor Authentication (2FA) Integration:** For accounts with 2FA enabled, Cyber Vault includes an integrated authenticator tool that generates One-Time Passwords (OTPs) within the app, enhancing account security. 
---  **Emergency Access:** In case of emergencies, users have limited offline access to their password data.
+### User Convenience:
+-  **Browser Integration:** A seamless browser extension integrates with popular web browsers (e.g., Chrome, Brave, Firefox, Safari) to offer auto-fill capabilities for passwords, credit card details, personal identity information, and documents, enhancing user convenience. 
+-  **Password Generation:** Users can generate strong, unique passwords with ease, eliminating the hassle of creating and remembering complex passwords. 
+-  **Search and Organization:** Cyber Vault offers a robust search functionality and the ability to organize passwords and data into folders or categories for efficient data management. 
+### Enhanced Security Measures:  
+-  **Biometric Authentication:** Users have the option to use biometric authentication (e.g., fingerprint, face recognition) for secure login. 
+-  **Two-Factor Authentication (2FA) Integration:** For accounts with 2FA enabled, Cyber Vault includes an integrated authenticator tool that generates One-Time Passwords (OTPs) within the app, enhancing account security. 
+-  **Emergency Access:** In case of emergencies, users have limited offline access to their password data.
 
 ## Functional Requirements: 
 ### User Registration:
