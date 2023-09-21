@@ -55,9 +55,9 @@ There are several ways you can contribute to this project:
 
 - **Bug Reports:** If you encounter a bug, please [submit an issue](#reporting-issues) with a detailed description and, if possible, steps to reproduce the problem.
   
-- **Feature Requests:** Have an idea for a new feature or improvement? [Open an issue](#reporting-issues) and describe your suggestion.
+- **Feature Requests:** Have an idea for a new feature or improvement? [Open an issue](../../issues) and describe your suggestion.
 
-- **Code Contributions:** If you'd like to contribute code, please follow the [Development Workflow](#development-workflow) outlined below.
+- **Code Contributions:** If you'd like to contribute code, please follow the [Procedure](#how-to-contribute) outlined below.
 
 - **Documentation:** Help improve our documentation by submitting changes or additions.
 
