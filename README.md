@@ -4,89 +4,15 @@ Cyber Vault is a state-of-the-art password manager application designed to simpl
 ## Table of Content
 1. [Cyber Vault](#cyber-vault)
 2. [Key Features](#key-features)
-<details>
-<summary>See List</summary>
-
-   - [Password Vault](#password-vault)
-   - [Security and Password Health](#security-and-password-health)
-   - [User Convenience](#user-convenience)
-   - [Enhanced Security Measures](#enhanced-security-measures)
-</details>
-
 3. [Functional Requirements](#functional-requirements)
-<details>
-<summary>See List</summary>
-
-   - [User Registration](#user-registration)
-   - [Login](#login)
-   - [Biometric Authentication](#biometric-authentication)
-   - [Password Storage](#password-storage)
-   - [Integrated 2FA Authenticator](#integrated-2fa-authenticator)
-   - [Secure Document Storage](#secure-document-storage)
-   - [Credit Card Storage](#credit-card-storage)
-   - [Personal Identity Information Storage](#personal-identity-information-storage)
-   - [Secure Notes](#secure-notes)
-   - [Browser Extension](#browser-extension)
-   - [Data Import/Export](#data-importexport)
-   - [Cloud Backup](#cloud-backup)
-   - [Trash Feature](#trash-feature)
-   - [Automatic Password Update](#automatic-password-update)
-   - [Password Organization](#password-organization)
-   - [Password Search](#password-search)
-   - [Password Expiry Reminder](#password-expiry-reminder)
-   - [Password Generation](#password-generation)
-   - [Offline Access](#offline-access)
-   - [Password Reuse Detection](#password-reuse-detection)
-   - [Weak Password Detection](#weak-password-detection)
-   - [Password Change Recommendations and Reminders](#password-change-recommendations-and-reminders)
-   - [Password Blacklist](#password-blacklist)
-   - [Password History Check](#password-history-check)
-   - [Third-Party Data Breach Monitoring](#third-party-data-breach-monitoring)
-   - [Password Strength Meter](#password-strength-meter)
-
-</details>
-
-5. [Non-Functional Requirements](#non-functional-requirements)
-<details>
-<summary>See List</summary>
-
- - [Security](#security)
- - [Performance](#performance)
- - [Availability](#availability)
- - [Scalability](#scalability)
- - [Reliability](#reliability)
- - [Usability](#usability)
- - [Compatibility](#compatibility)
- - [Resource Efficiency](#resource-efficiency)
-</details>
-  
-6. [Flutter Installation](#flutter-installation)
-<details>
-<summary>See List</summary>
-
- - [System Requirements](#system-requirements)
- - [Download Flutter](#download-flutter)
- - [Add Flutter to Your Path](#add-flutter-to-your-path)
- - [Run `flutter doctor`](#run-flutter-doctor)
- - [Verifying Installation](#verifying-installation)
-</details>
-
-8. [Project Setup](#project-setup)
-<details>
-<summary>See List</summary>
-
-   - [Flutter Setup](#flutter-setup)
-   - [Clone the Repository](#clone-the-repository)
-   - [Navigate to the Project Folder](#navigate-to-the-project-folder)
-   - [Install Dependencies](#install-dependencies)
-   - [Run the Application](#run-the-application)
-</details>
-
-9. [Project Team](#project-team)
-10. [Contributing](#contributing)
-11. [Support](#support)
-12. [License](#license)
-13. [Acknowledgments](#acknowledgments)
+4. [Non-Functional Requirements](#non-functional-requirements)
+5. [Flutter Installation](#flutter-installation)
+6. [Project Setup](#project-setup)
+7. [Project Team](#project-team)
+8. [Contributing](#contributing)
+9. [Support](#support)
+10. [License](#license)
+11. [Acknowledgments](#acknowledgments)
 
 ## Key Features  
 -  **Password Vault:** Cyber Vault provides a secure and user-friendly vault to store and manage a wide range of sensitive information, including: 
