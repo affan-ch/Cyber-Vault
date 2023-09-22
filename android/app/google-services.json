@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259025625451",
+    "project_id": "cyber-vault",
+    "storage_bucket": "cyber-vault.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259025625451:android:7ca6ece19775c889296c2e",
+        "android_client_info": {
+          "package_name": "com.example.cyber_vault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiNCiCXniWS8p8WrHNR9NSAvtNe5c8gtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
