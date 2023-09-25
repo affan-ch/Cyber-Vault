@@ -1,9 +1,7 @@
 import 'package:cyber_vault/widgets/text_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/backend/firebase_auth.dart';
 import 'package:cyber_vault/pages/login_page.dart';
+import 'package:cyber_vault/models/signup.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -13,8 +11,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  final FirebaseAuthService _auth = FirebaseAuthService();
-
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -25,6 +21,26 @@ class _SignUpPageState extends State<SignUpPage> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  String responseText = ".";
+
+  void _signUp() async {
+    String name = _nameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    var response = await signUp(name, email, password);
+
+    if (response.statusCode == 200) {
+      setState(() {
+        responseText = "Account created successfully!";
+      });
+    } else {
+      setState(() {
+        responseText = "Error: ${response.statusCode}";
+      });
+    }
   }
 
   @override
@@ -68,11 +84,16 @@ class _SignUpPageState extends State<SignUpPage> {
                 marginBottom: 25,
                 width: 400,
               ),
+              Text(
+                responseText,
+                style: const TextStyle(fontSize: 18),
+              ),
               SizedBox(
                 width: 400,
                 height: 45,
                 child: FilledButton(
                   onPressed: () {
+                    // _signUp();
                     _signUp();
                   },
                   child: const Text(
@@ -111,24 +132,5 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
-  }
-
-  void _signUp() async {
-    // String username = _usernameController.text;
-    String email = _emailController.text;
-    String password = _passwordController.text;
-
-    User? user = await _auth.signUpWithEmailAndPassword(email, password);
-
-    if (user != null) {
-      if (kDebugMode) {
-        print("User is successfully created");
-      }
-      Navigator.pushNamed(context, "/home");
-    } else {
-      if (kDebugMode) {
-        print("Some error happend");
-      }
-    }
   }
 }

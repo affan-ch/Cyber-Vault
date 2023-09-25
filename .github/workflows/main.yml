@@ -20,6 +20,8 @@ jobs:
         with:
           flutter-version: '3.13.2'
       - run: flutter pub get
+      - run: flutter --version
+      - run: flutter doctor -v
 
       - run: flutter build apk --debug --split-per-abi
       - run: |
@@ -34,8 +36,9 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-          tag: v1.0.${{ github.run_number }}-alpha
+          tag: v0.0.2-alpha
           token: ${{ secrets.TOKEN }}
+          prerelease: true
 
 
 

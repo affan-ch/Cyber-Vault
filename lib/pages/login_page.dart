@@ -1,11 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cyber_vault/pages/shell_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cyber_vault/pages/signup_page.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
-
-import '../backend/firebase_auth.dart';
+import 'package:cyber_vault/models/login.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -15,10 +14,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // final bool _isSigning = false;
-
-  final FirebaseAuthService _auth = FirebaseAuthService();
-
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -27,6 +22,24 @@ class _LoginPageState extends State<LoginPage> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    var response = await login(email, password);
+
+    if (response.body == "Login successful") {
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const ShellPage()),
+          (route) => false);
+    } else {
+      setState(() {
+        // responseText = "Error: ${response.statusCode}";
+      });
+    }
   }
 
   @override
@@ -71,7 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                 width: 200,
                 height: 50,
                 child: FilledButton(
-                    onPressed: _signIn, child: const Text("Login")),
+                    onPressed: () {
+                      _signIn();
+                    },
+                    child: const Text("Login")),
               ),
               const SizedBox(
                 height: 20,
@@ -102,28 +118,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  void _signIn() async {
-    String email = _emailController.text;
-    String password = _passwordController.text;
-
-    User? user = await _auth.signInWithEmailAndPassword(email, password);
-
-    if (user != null) {
-      if (kDebugMode) {
-        print("User is successfully signedIn");
-      }
-      // Navigator.pushNamed(context, "/home");
-      // ignore: use_build_context_synchronously
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => const ShellPage()),
-          (route) => false);
-    } else {
-      if (kDebugMode) {
-        print("Some error happend");
-      }
-    }
   }
 }
