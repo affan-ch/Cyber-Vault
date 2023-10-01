@@ -36,14 +36,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
-          tag: v0.0.2-alpha
+          tag: v0.0.1-alpha
           token: ${{ secrets.TOKEN }}
           prerelease: true
-
-
-
-
-
-
-# push to master, main, develop
-# pull request on main master
