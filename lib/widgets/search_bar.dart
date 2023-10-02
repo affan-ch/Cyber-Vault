@@ -30,6 +30,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           trailing: const <Widget>[
             IconButton(
               icon: CircleAvatar(
+                radius: 20,
                 backgroundImage: NetworkImage(
                     "https://ui-avatars.com/api/?name=Affan+Chaudhary&rounded=true"),
               ),
