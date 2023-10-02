@@ -1,3 +1,8 @@
+import 'package:cyber_vault/pages/credit_card_page.dart';
+import 'package:cyber_vault/pages/documents_page.dart';
+import 'package:cyber_vault/pages/passwords_page.dart';
+import 'package:cyber_vault/pages/personal_info_page.dart';
+import 'package:cyber_vault/pages/secure_notes.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,6 +33,11 @@ class MyApp extends StatelessWidget {
           '/login': (context) => const LoginPage(),
           '/signUp': (context) => const SignUpPage(),
           '/home': (context) => const HomePage(),
+          '/passwords': (context) => const PasswordsPage(),
+          '/personal_info': (context) => const PersonalInfoPage(),
+          '/secure_notes': (context) => const SecureNotesPage(),
+          '/documents': (context) => const DocumentsPage(),
+          '/credit_card': (context) => const CreditCardPage()
         },
         theme: ThemeData(
           colorScheme:
