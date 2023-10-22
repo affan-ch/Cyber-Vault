@@ -238,7 +238,7 @@ For more information and detailed documentation, visit the [Flutter website](htt
    ```
    
 ## Project Team 
-- [M. Affan Maqsood](https://github.com/affan-ch)  
+- [Affan Ch.](https://github.com/affan-ch)  
 - [Sultan NoorudDin](https://github.com/SultanNoorudDin) 
 - [Yasir Mehmood](https://github.com/Yasir-Mahmood-124) 
 - [Umer Farooq](https://github.com/umer-farooq-official) 
@@ -260,7 +260,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Acknowledgments
 
-- Thanks to [M. Affan Maqsood](https://github.com/muhammadaffanmaqsood) for the inspiration.
+- Thanks to [Affan Ch.](https://github.com/affan-ch) for the inspiration.
 - Special thanks to the [Flutter community](https://flutter.dev/community) for their support and resources.
 - Thanks to the [Material Design 3 community](https://m3.material.io/) for their design guidance. 
 - We are grateful for the services provided by [Firebase](https://firebase.google.com/) for making our project possible.
