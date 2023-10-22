@@ -75,7 +75,7 @@ Before you start contributing, make sure you have:
 1. Clone then repository to your local machine:
 
 ```bash
-git clone https://github.com/muhammadaffanmaqsood/Cyber-Vault.git
+git clone https://github.com/affan-ch/Cyber-Vault.git
 ```
 
  2. Change your current directory to the project folder:
@@ -136,5 +136,5 @@ If you encounter any problems or have suggestions for improvements, please [open
 
 ## Contact
 
-If you have questions or need assistance, feel free to reach out to [M. Affan Maqsood](mailto:muhammadaffanmaqsood@gmail.com).
+If you have questions or need assistance, feel free to reach out to [Affan Ch.](mailto:affan_ali_ch@outlook.com).
 
