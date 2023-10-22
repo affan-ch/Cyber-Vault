@@ -216,7 +216,7 @@ For more information and detailed documentation, visit the [Flutter website](htt
 2. **Clone the Repository**: Clone this repository to your local machine using Git:
 
    ```bash
-   git clone https://github.com/muhammadaffanmaqsood/Cyber-Vault.git
+   git clone https://github.com/affan-ch/Cyber-Vault.git
    ```
 
 3. **Navigate to the Project Folder**: Change your current directory to the project folder:
@@ -238,7 +238,7 @@ For more information and detailed documentation, visit the [Flutter website](htt
    ```
    
 ## Project Team 
-- [M. Affan Maqsood](https://github.com/muhammadaffanmaqsood)  
+- [M. Affan Maqsood](https://github.com/affan-ch)  
 - [Sultan NoorudDin](https://github.com/SultanNoorudDin) 
 - [Yasir Mehmood](https://github.com/Yasir-Mahmood-124) 
 - [Umer Farooq](https://github.com/Itxumar) 
@@ -252,7 +252,7 @@ We are committed to fostering an inclusive and welcoming community. Please take 
 We welcome contributions! Please read our [Contribution Guidelines](CONTRIBUTING.md) for details on how to get started.
 
 ## Support 
-If you encounter any issues or have questions, please [open an issue](https://github.com/muhammadaffanmaqsood/Cyber-Vault/issues) or contact us at support@cybervault.com.
+If you encounter any issues or have questions, please [open an issue](https://github.com/affan-ch/Cyber-Vault/issues) or contact us at support@cybervault.com.
 
 ## License
 
