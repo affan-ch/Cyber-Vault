@@ -241,7 +241,7 @@ For more information and detailed documentation, visit the [Flutter website](htt
 - [M. Affan Maqsood](https://github.com/affan-ch)  
 - [Sultan NoorudDin](https://github.com/SultanNoorudDin) 
 - [Yasir Mehmood](https://github.com/Yasir-Mahmood-124) 
-- [Umer Farooq](https://github.com/Itxumar) 
+- [Umer Farooq](https://github.com/umer-farooq-official) 
 
 ## Code of Conduct
 
