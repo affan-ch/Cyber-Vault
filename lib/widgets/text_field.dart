@@ -12,6 +12,8 @@ class MaterialTextField extends StatefulWidget {
   final double? marginBottom;
   final double? marginLeft;
   final double? marginRight;
+  final bool? isReadOnly;
+  final String? errorText;
 
   const MaterialTextField({
     super.key,
@@ -24,6 +26,8 @@ class MaterialTextField extends StatefulWidget {
     this.marginBottom,
     this.marginLeft,
     this.marginRight,
+    this.isReadOnly,
+    this.errorText,
   });
 
   @override
@@ -48,8 +52,10 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
             width: widget.width,
             height: widget.height,
             child: TextField(
+              readOnly: widget.isReadOnly ?? false,
               controller: widget.controller,
               decoration: InputDecoration(
+                errorText: widget.errorText,
                 labelText: widget.labelText,
                 border: const OutlineInputBorder(),
                 suffixIcon: _showSuffixIcon

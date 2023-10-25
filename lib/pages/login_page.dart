@@ -2,7 +2,6 @@
 
 import 'package:cyber_vault/pages/shell_page.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/pages/signup_page.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:cyber_vault/models/login.dart';
 
@@ -29,8 +28,9 @@ class _LoginPageState extends State<LoginPage> {
     String password = _passwordController.text;
 
     var response = await login(email, password);
+    print(response.statusCode);
 
-    if (response.body == "Login successful") {
+    if (response.statusCode == 200) {
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const ShellPage()),
@@ -101,11 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                       onTap: () {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUpPage()),
-                            (route) => false);
+                        Navigator.pushNamed(context, '/signUp');
                       },
                       child: const Text(
                         "Sign Up",

@@ -10,6 +10,7 @@ import 'package:cyber_vault/pages/splash_screen.dart';
 import 'package:cyber_vault/pages/home_page.dart';
 import 'package:cyber_vault/pages/login_page.dart';
 import 'package:cyber_vault/pages/signup_page.dart';
+import 'package:cyber_vault/pages/add_password_page.dart';
 
 Future main() async {
   runApp(const MyApp());
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
           '/personal_info': (context) => const PersonalInfoPage(),
           '/secure_notes': (context) => const SecureNotesPage(),
           '/documents': (context) => const DocumentsPage(),
-          '/credit_card': (context) => const CreditCardPage()
+          '/credit_card': (context) => const CreditCardPage(),
+          '/add_password': (context) => const AddPasswordPage(),
         },
         theme: ThemeData(
           colorScheme:
