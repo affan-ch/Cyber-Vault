@@ -1,9 +1,47 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
+
+import 'package:cyber_vault/models/local_session.dart';
 import 'package:cyber_vault/pages/shell_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:cyber_vault/models/login.dart';
+import 'package:sqflite/sqflite.dart';
+
+class User {
+  final String firstName;
+  final String lastName;
+  final String email;
+  final String username;
+  final String token;
+
+  User(
+      {required this.firstName,
+      required this.lastName,
+      required this.email,
+      required this.username,
+      required this.token});
+
+  Map<String, dynamic> toMap() {
+    return {
+      'firstName': firstName,
+      'lastName': lastName,
+      'email': email,
+      'username': username,
+      'token': token,
+    };
+  }
+}
+
+Future<void> insertUser(User user) async {
+  final db = await getDatabase();
+  await db.insert(
+    'users',
+    user.toMap(),
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
+}
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -31,6 +69,19 @@ class _LoginPageState extends State<LoginPage> {
     print(response.statusCode);
 
     if (response.statusCode == 200) {
+      print(response.body);
+      final Map<String, dynamic> responseData = json.decode(response.body);
+      final User user = User(
+        firstName: responseData['firstName'],
+        lastName: responseData['lastName'],
+        email: responseData['email'],
+        username: responseData['username'],
+        token: responseData['token'],
+      );
+
+      // Insert user into the database
+      await insertUser(user);
+
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const ShellPage()),

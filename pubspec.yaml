@@ -17,6 +17,9 @@ dependencies:
   http: ^1.1.0
   argon2: ^1.0.1
   fluttertoast: ^8.2.2
+  path: ^1.8.3
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0+2
 
 dev_dependencies:
   flutter_test:
