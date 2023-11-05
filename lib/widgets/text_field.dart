@@ -38,6 +38,23 @@ class MaterialTextField extends StatefulWidget {
 class _MaterialTextFieldState extends State<MaterialTextField> {
   bool _obscureText = true;
   bool _showSuffixIcon = false;
+  bool _showPasswordSuffixIcon = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the visibility of the suffix icon based on the initial text.
+    _showPasswordSuffixIcon = widget.controller.text.isNotEmpty;
+
+    // Add a listener to the controller to update the visibility of the suffix icon.
+    // widget.controller.addListener(() {
+    //   if (_showPasswordSuffixIcon != widget.controller.text.isNotEmpty) {
+    //     setState(() {
+    //       _showPasswordSuffixIcon = widget.controller.text.isNotEmpty;
+    //     });
+    //   }
+    // });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +75,8 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
                 errorText: widget.errorText,
                 labelText: widget.labelText,
                 border: const OutlineInputBorder(),
-                suffixIcon: _showSuffixIcon
-                    ? (widget.isPassword
+                suffixIcon: widget.isPassword
+                    ? (_showPasswordSuffixIcon
                         ? IconButton(
                             icon: Icon(
                               _obscureText
@@ -72,7 +89,9 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
                               });
                             },
                           )
-                        : IconButton(
+                        : null)
+                    : (_showSuffixIcon
+                        ? IconButton(
                             icon: const Icon(Icons.cancel_outlined),
                             onPressed: () {
                               widget.controller.clear();
@@ -80,13 +99,24 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
                                 _showSuffixIcon = false;
                               });
                             },
-                          ))
-                    : null,
+                          )
+                        : null),
               ),
               onChanged: (text) {
                 setState(() {
                   _showSuffixIcon = text.isNotEmpty;
+                  _showPasswordSuffixIcon = text.isNotEmpty;
                 });
+              },
+              onTap: () {
+                // check if readonly is false
+                if (!widget.isReadOnly! &&
+                    !widget.isPassword &&
+                    widget.controller.text.isNotEmpty) {
+                  setState(() {
+                    _showSuffixIcon = true;
+                  });
+                }
               },
               obscureText: widget.isPassword && _obscureText,
             )));

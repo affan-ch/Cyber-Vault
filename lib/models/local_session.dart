@@ -8,7 +8,7 @@ Future<Database> getDatabase() async {
     join(dbPath, 'session.db'),
     onCreate: (db, version) {
       return db.execute(
-        'CREATE TABLE users(firstName TEXT, lastName TEXT, email TEXT, username TEXT PRIMARY KEY, token TEXT)',
+        'CREATE TABLE users(firstName TEXT, lastName TEXT, email TEXT, username TEXT PRIMARY KEY, token TEXT, createdAt DATETIME DEFAULT CURRENT_TIMESTAMP)',
       );
     },
     version: 1,

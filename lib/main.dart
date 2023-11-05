@@ -3,7 +3,7 @@ import 'package:cyber_vault/models/local_session.dart';
 import 'package:cyber_vault/models/validate_token.dart';
 import 'package:cyber_vault/pages/credit_card_page.dart';
 import 'package:cyber_vault/pages/documents_page.dart';
-import 'package:cyber_vault/pages/passwords_page.dart';
+import 'package:cyber_vault/pages/accounts_page.dart';
 import 'package:cyber_vault/pages/personal_info_page.dart';
 import 'package:cyber_vault/pages/secure_notes.dart';
 import 'package:cyber_vault/pages/shell_page.dart';
@@ -14,7 +14,7 @@ import 'package:cyber_vault/pages/splash_screen.dart';
 import 'package:cyber_vault/pages/home_page.dart';
 import 'package:cyber_vault/pages/login_page.dart';
 import 'package:cyber_vault/pages/signup_page.dart';
-import 'package:cyber_vault/pages/add_password_page.dart';
+import 'package:cyber_vault/pages/add_account_page.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 Future main() async {
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
     if (response.statusCode == 200) {
       return '/home';
     } else {
-      clearTable();
+      await clearTable();
       return '/login';
     }
   }
@@ -89,12 +89,12 @@ class _MyAppState extends State<MyApp> {
           '/login': (context) => const LoginPage(),
           '/signUp': (context) => const SignUpPage(),
           '/home': (context) => const HomePage(),
-          '/passwords': (context) => const PasswordsPage(),
+          '/accounts': (context) => const AccountsPage(),
           '/personal_info': (context) => const PersonalInfoPage(),
           '/secure_notes': (context) => const SecureNotesPage(),
           '/documents': (context) => const DocumentsPage(),
           '/credit_card': (context) => const CreditCardPage(),
-          '/add_password': (context) => const AddPasswordPage(),
+          '/add_account': (context) => const AddAccountPage(),
         },
         theme: ThemeData(
           colorScheme:

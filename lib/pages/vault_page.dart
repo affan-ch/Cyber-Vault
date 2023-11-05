@@ -13,11 +13,11 @@ class VaultPage extends StatelessWidget {
           Card(
               child: ListTile(
             onTap: () {
-              Navigator.pushNamed(context, '/passwords');
+              Navigator.pushNamed(context, '/accounts');
             },
             leading: const Icon(Icons.vpn_key, size: 25),
-            title: const Text('Passwords'),
-            subtitle: const Text('Manage your login passwords.'),
+            title: const Text('Accounts'),
+            subtitle: const Text('Manage your login accounts.'),
             trailing: const Icon(Icons.chevron_right),
             isThreeLine: false,
           )),
