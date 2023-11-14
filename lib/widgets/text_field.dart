@@ -14,21 +14,22 @@ class MaterialTextField extends StatefulWidget {
   final double? marginRight;
   final bool? isReadOnly;
   final String? errorText;
+  final String? hintText;
 
-  const MaterialTextField({
-    super.key,
-    required this.isPassword,
-    required this.controller,
-    required this.labelText,
-    this.width,
-    this.height,
-    this.marginTop,
-    this.marginBottom,
-    this.marginLeft,
-    this.marginRight,
-    this.isReadOnly,
-    this.errorText,
-  });
+  const MaterialTextField(
+      {super.key,
+      required this.isPassword,
+      required this.controller,
+      required this.labelText,
+      this.width,
+      this.height,
+      this.marginTop,
+      this.marginBottom,
+      this.marginLeft,
+      this.marginRight,
+      this.isReadOnly,
+      this.errorText,
+      this.hintText});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -43,17 +44,7 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
   @override
   void initState() {
     super.initState();
-    // Initialize the visibility of the suffix icon based on the initial text.
     _showPasswordSuffixIcon = widget.controller.text.isNotEmpty;
-
-    // Add a listener to the controller to update the visibility of the suffix icon.
-    // widget.controller.addListener(() {
-    //   if (_showPasswordSuffixIcon != widget.controller.text.isNotEmpty) {
-    //     setState(() {
-    //       _showPasswordSuffixIcon = widget.controller.text.isNotEmpty;
-    //     });
-    //   }
-    // });
   }
 
   @override
@@ -72,6 +63,7 @@ class _MaterialTextFieldState extends State<MaterialTextField> {
               readOnly: widget.isReadOnly ?? false,
               controller: widget.controller,
               decoration: InputDecoration(
+                hintText: widget.hintText,
                 errorText: widget.errorText,
                 labelText: widget.labelText,
                 border: const OutlineInputBorder(),

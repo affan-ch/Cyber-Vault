@@ -1,30 +1,31 @@
 // ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
 
-import 'package:cyber_vault/models/update_account.dart';
+import 'package:cyber_vault/models/credit_card.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/models/delete_account.dart';
 
-class EditAccountPage extends StatefulWidget {
-  final dynamic account;
+class EditCreditCardPage extends StatefulWidget {
+  final dynamic creditCard;
 
-  const EditAccountPage({super.key, required this.account});
+  const EditCreditCardPage({super.key, required this.creditCard});
 
   @override
-  _EditAccountPageState createState() => _EditAccountPageState();
+  _EditCreditCardPageState createState() => _EditCreditCardPageState();
 }
 
-class _EditAccountPageState extends State<EditAccountPage> {
-  final TextEditingController domainController = TextEditingController();
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController phoneNumberController = TextEditingController();
+class _EditCreditCardPageState extends State<EditCreditCardPage> {
+  final TextEditingController _cardTitleController = TextEditingController();
+  final TextEditingController _cardHolderNameController =
+      TextEditingController();
+  final TextEditingController _cardNumberController = TextEditingController();
+  final TextEditingController _cardCVVController = TextEditingController();
+  final TextEditingController _cardPinController = TextEditingController();
+  final TextEditingController _cardExpiryDateController =
+      TextEditingController();
+  final TextEditingController _noteController = TextEditingController();
 
   bool isReadOnly = true;
-  String accountId = "";
+  String creditCardId = "";
   bool _isButtonVisible = true;
 
   void toggleReadOnly() {
@@ -41,26 +42,26 @@ class _EditAccountPageState extends State<EditAccountPage> {
   }
 
   void _updateRecord() async {
-    String domain = domainController.text;
-    String firstName = firstNameController.text;
-    String lastName = lastNameController.text;
-    String email = emailController.text;
-    String username = usernameController.text;
-    String password = passwordController.text;
-    String phoneNumber = phoneNumberController.text;
+    String cardTitle = _cardTitleController.text;
+    String cardHolderName = _cardHolderNameController.text;
+    String cardNumber = _cardNumberController.text;
+    String cardCVV = _cardCVVController.text;
+    String cardPin = _cardPinController.text;
+    String cardExpiryDate = _cardExpiryDateController.text;
+    String note = _noteController.text;
 
-    var response = await updateAccount(accountId, domain, firstName, lastName,
-        email, username, password, phoneNumber);
+    var response = await updateCreditCard(cardTitle, cardHolderName, cardNumber,
+        cardCVV, cardPin, cardExpiryDate, note, creditCardId);
 
     print(response.body);
 
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Account Updated')),
+        const SnackBar(content: Text('Credit Card Updated')),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Error Updating Account')),
+        const SnackBar(content: Text('Error Updating Credit Card')),
       );
     }
   }
@@ -70,32 +71,35 @@ class _EditAccountPageState extends State<EditAccountPage> {
     super.initState();
 
     setState(() {
-      accountId = widget.account.id;
+      creditCardId = widget.creditCard.id;
     });
 
-    domainController.text = widget.account.accountDomain;
-    firstNameController.text = widget.account.firstName;
-    lastNameController.text = widget.account.lastName;
-    emailController.text = widget.account.email;
-    usernameController.text = widget.account.username;
-    passwordController.text = widget.account.password;
-    phoneNumberController.text = widget.account.phoneNumber;
+    _cardTitleController.text = widget.creditCard.cardTitle;
+    _cardHolderNameController.text = widget.creditCard.cardHolderName;
+    _cardNumberController.text = widget.creditCard.cardNumber;
+    _cardCVVController.text = widget.creditCard.cardCVV;
+    _cardPinController.text = widget.creditCard.cardPin;
+    final cardExpiryMonth = widget.creditCard.cardExpiryMonth;
+    final cardExpiryYear = widget.creditCard.cardExpiryYear;
+    _cardExpiryDateController.text =
+        "$cardExpiryMonth/$cardExpiryYear"; // widget.creditCard.cardExpiryDate;
+    _noteController.text = widget.creditCard.note;
   }
 
-  void _deleteAccount() async {
-    var response = await deleteAccount(accountId);
+  void _deleteCreditCard() async {
+    var response = await deleteCreditCard(creditCardId);
 
     print(response.body);
 
     if (response.statusCode == 200) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Account Deleted')),
+        const SnackBar(content: Text('Credit Card Deleted')),
       );
 
       Navigator.pop(context);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Error Deleting Account')),
+        const SnackBar(content: Text('Error Deleting Credit Card')),
       );
     }
   }
@@ -150,7 +154,7 @@ class _EditAccountPageState extends State<EditAccountPage> {
                               visible: _isButtonVisible,
                               child: FilledButton.icon(
                                   onPressed: () {
-                                    _deleteAccount();
+                                    _deleteCreditCard();
                                   },
                                   icon: const Icon(Icons.delete),
                                   label: const Text("Delete"),
@@ -174,8 +178,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
               children: <Widget>[
                 MaterialTextField(
                   isPassword: false,
-                  controller: domainController,
-                  labelText: "Domain",
+                  controller: _cardTitleController,
+                  labelText: "Card Title",
                   marginTop: 15,
                   marginLeft: 25,
                   marginRight: 25,
@@ -185,8 +189,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 ),
                 MaterialTextField(
                   isPassword: false,
-                  controller: firstNameController,
-                  labelText: "First Name",
+                  controller: _cardHolderNameController,
+                  labelText: "Card Holder Name",
                   marginLeft: 25,
                   marginRight: 25,
                   marginBottom: 25,
@@ -195,8 +199,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 ),
                 MaterialTextField(
                   isPassword: false,
-                  controller: lastNameController,
-                  labelText: "Last Name",
+                  controller: _cardNumberController,
+                  labelText: "Card Number",
                   marginLeft: 25,
                   marginRight: 25,
                   marginBottom: 25,
@@ -205,18 +209,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 ),
                 MaterialTextField(
                   isPassword: false,
-                  controller: emailController,
-                  labelText: "Email",
-                  marginLeft: 25,
-                  marginRight: 25,
-                  marginBottom: 25,
-                  width: 500,
-                  isReadOnly: isReadOnly,
-                ),
-                MaterialTextField(
-                  isPassword: false,
-                  controller: usernameController,
-                  labelText: "Username",
+                  controller: _cardCVVController,
+                  labelText: "Card CVV",
                   marginLeft: 25,
                   marginRight: 25,
                   marginBottom: 25,
@@ -225,8 +219,18 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 ),
                 MaterialTextField(
                   isPassword: true,
-                  controller: passwordController,
-                  labelText: "Password",
+                  controller: _cardPinController,
+                  labelText: "Card Pin",
+                  marginLeft: 25,
+                  marginRight: 25,
+                  marginBottom: 25,
+                  width: 500,
+                  isReadOnly: isReadOnly,
+                ),
+                MaterialTextField(
+                  isPassword: false,
+                  controller: _cardExpiryDateController,
+                  labelText: "Card Expiry Date",
                   marginLeft: 25,
                   marginRight: 25,
                   width: 500,
@@ -234,8 +238,8 @@ class _EditAccountPageState extends State<EditAccountPage> {
                 ),
                 MaterialTextField(
                   isPassword: false,
-                  controller: phoneNumberController,
-                  labelText: "Phone Number",
+                  controller: _noteController,
+                  labelText: "Note",
                   marginTop: 25,
                   marginLeft: 25,
                   marginRight: 25,
