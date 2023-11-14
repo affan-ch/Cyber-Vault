@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:cyber_vault/models/local_session.dart';
 import 'package:cyber_vault/models/validate_token.dart';
+import 'package:cyber_vault/pages/add_credit_card_page.dart';
 import 'package:cyber_vault/pages/credit_card_page.dart';
 import 'package:cyber_vault/pages/documents_page.dart';
 import 'package:cyber_vault/pages/accounts_page.dart';
@@ -94,6 +95,7 @@ class _MyAppState extends State<MyApp> {
           '/secure_notes': (context) => const SecureNotesPage(),
           '/documents': (context) => const DocumentsPage(),
           '/credit_card': (context) => const CreditCardPage(),
+          '/add_creditCard': (context) => const AddCreditCardPage(),
           '/add_account': (context) => const AddAccountPage(),
         },
         theme: ThemeData(
