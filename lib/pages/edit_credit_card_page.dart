@@ -1,6 +1,6 @@
-// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, avoid_print
 
-import 'package:cyber_vault/models/credit_card.dart';
+import 'package:cyber_vault/services/credit_card_service.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,7 @@ class EditCreditCardPage extends StatefulWidget {
   const EditCreditCardPage({super.key, required this.creditCard});
 
   @override
-  _EditCreditCardPageState createState() => _EditCreditCardPageState();
+  State<EditCreditCardPage> createState() => _EditCreditCardPageState();
 }
 
 class _EditCreditCardPageState extends State<EditCreditCardPage> {

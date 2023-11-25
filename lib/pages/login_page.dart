@@ -2,37 +2,13 @@
 
 import 'dart:convert';
 
-import 'package:cyber_vault/models/local_session.dart';
+import 'package:cyber_vault/models/user.dart';
+import 'package:cyber_vault/services/local_session.dart';
 import 'package:cyber_vault/pages/shell_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
-import 'package:cyber_vault/models/login.dart';
+import 'package:cyber_vault/services/login.dart';
 import 'package:sqflite/sqflite.dart';
-
-class User {
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String username;
-  final String token;
-
-  User(
-      {required this.firstName,
-      required this.lastName,
-      required this.email,
-      required this.username,
-      required this.token});
-
-  Map<String, dynamic> toMap() {
-    return {
-      'firstName': firstName,
-      'lastName': lastName,
-      'email': email,
-      'username': username,
-      'token': token,
-    };
-  }
-}
 
 Future<void> insertUser(User user) async {
   final db = await getDatabase();

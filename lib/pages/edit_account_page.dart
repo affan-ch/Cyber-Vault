@@ -1,9 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
 
-import 'package:cyber_vault/models/update_account.dart';
+import 'package:cyber_vault/services/account_service.dart';
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/models/delete_account.dart';
 
 class EditAccountPage extends StatefulWidget {
   final dynamic account;
