@@ -1,9 +1,8 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously, avoid_print
 
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/models/add_account.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
+import 'package:cyber_vault/services/account_service.dart';
 
 class AddAccountPage extends StatefulWidget {
   const AddAccountPage({Key? key}) : super(key: key);
@@ -120,25 +119,7 @@ class _AddAccountPageState extends State<AddAccountPage> {
                       if (response.body.toString() ==
                           'Password added successfully') {
                         Navigator.pop(context);
-                        // Fluttertoast.showToast(
-                        //     msg: "Password added successfully",
-                        //     toastLength: Toast.LENGTH_SHORT,
-                        //     gravity: ToastGravity.BOTTOM,
-                        //     timeInSecForIosWeb: 1,
-                        //     backgroundColor: Theme.of(context).colorScheme.secondary,
-                        //     textColor: Colors.white,
-                        //     fontSize: 16.0);
-                      } else {
-                        // show toast
-                        // Fluttertoast.showToast(
-                        //     msg: "Password not added successfully",
-                        //     toastLength: Toast.LENGTH_SHORT,
-                        //     gravity: ToastGravity.BOTTOM,
-                        //     timeInSecForIosWeb: 1,
-                        //     backgroundColor: Theme.of(context).colorScheme.secondary,
-                        //     textColor: Colors.white,
-                        //     fontSize: 16.0);
-                      }
+                      } else {}
                     },
                     child: const Text("Add Account")))
           ],

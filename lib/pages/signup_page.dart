@@ -2,7 +2,7 @@
 
 import 'package:cyber_vault/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:cyber_vault/models/signup.dart';
+import 'package:cyber_vault/services/signup.dart';
 import 'package:http/http.dart';
 
 class SignUpPage extends StatefulWidget {
