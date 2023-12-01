@@ -2,9 +2,11 @@ import 'dart:convert';
 import 'package:cyber_vault/services/hashing.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<http.Response> fetchSaltByEmail(String email) async {
-  final url = Uri.parse('http://localhost:3000/api/getSaltByEmail/');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/getSaltByEmail/');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'email': email});
 
@@ -32,11 +34,8 @@ Future<http.Response> login(String email, String password) async {
 
   var hashedPassword = hashPassword(password, salt);
 
-  if (kDebugMode) {
-    print('Login Hashed password: $hashedPassword');
-  }
-
-  final url = Uri.parse('http://localhost:3000/api/login');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/login');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'email': email, 'password': hashedPassword});
 

@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<http.Response> validateToken(String token) async {
-  final url = Uri.parse('http://localhost:3000/api/validateToken');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/validateToken');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'token': token,

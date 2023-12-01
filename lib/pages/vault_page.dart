@@ -34,18 +34,18 @@ class VaultPage extends StatelessWidget {
               isThreeLine: false,
             ),
           ),
-          Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, '/documents');
-              },
-              leading: const Icon(Icons.description, size: 25), // Document Icon
-              title: const Text('Documents'),
-              subtitle: const Text('Access and organize your documents.'),
-              trailing: const Icon(Icons.chevron_right),
-              isThreeLine: false,
-            ),
-          ),
+          // Card(
+          //   child: ListTile(
+          //     onTap: () {
+          //       Navigator.pushNamed(context, '/documents');
+          //     },
+          //     leading: const Icon(Icons.description, size: 25), // Document Icon
+          //     title: const Text('Documents'),
+          //     subtitle: const Text('Access and organize your documents.'),
+          //     trailing: const Icon(Icons.chevron_right),
+          //     isThreeLine: false,
+          //   ),
+          // ),
           Card(
             child: ListTile(
               onTap: () {

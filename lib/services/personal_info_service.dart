@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:cyber_vault/models/personal_info.dart';
 import 'package:http/http.dart' as http;
 import 'package:cyber_vault/services/local_session.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // addPersonalInfo() function is used to add personal information of the user
 Future<http.Response> addPersonalInfo(
@@ -37,7 +38,9 @@ Future<http.Response> addPersonalInfo(
     return http.Response.bytes([], 500);
   }
 
-  final url = Uri.parse('http://localhost:3000/api/addPersonalInfo');
+  dynamic domain = dotenv.env['DOMAIN'];
+
+  final url = Uri.parse('$domain/api/addPersonalInfo');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'firstName': firstName,
@@ -82,7 +85,9 @@ Future<List<PersonalInfo>> getPersonalInfos() async {
     return [];
   }
 
-  final url = Uri.parse('http://localhost:3000/api/getPersonalInfos');
+  dynamic domain = dotenv.env['DOMAIN'];
+
+  final url = Uri.parse('$domain/api/getPersonalInfos');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'token': token});
 
@@ -133,7 +138,8 @@ Future<http.Response> updatePersonalInfo(
     return http.Response.bytes([], 500);
   }
 
-  final url = Uri.parse('http://localhost:3000/api/updatePersonalInfo');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/updatePersonalInfo');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'id': id,
@@ -178,8 +184,8 @@ Future<http.Response> deletePersonalInfo(String id) async {
   if (token.isEmpty) {
     return http.Response.bytes([], 500);
   }
-
-  final url = Uri.parse('http://localhost:3000/api/deletePersonalInfo');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/deletePersonalInfo');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'id': id, 'token': token});
 

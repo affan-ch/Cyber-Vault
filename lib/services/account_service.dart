@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:cyber_vault/models/account.dart';
 import 'package:http/http.dart' as http;
 import 'package:cyber_vault/services/local_session.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // addAccount
 Future<http.Response> addAccount(
@@ -17,8 +18,8 @@ Future<http.Response> addAccount(
   if (token.isEmpty) {
     return http.Response.bytes([], 500);
   }
-
-  final url = Uri.parse('http://localhost:3000/api/addAccount');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/addAccount');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'accountDomain': domain,
@@ -43,8 +44,8 @@ Future<http.Response> deleteAccount(String accountId) async {
   if (token.isEmpty) {
     return http.Response.bytes([], 500);
   }
-
-  final url = Uri.parse('http://localhost:3000/api/deleteAccount');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/deleteAccount');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'id': accountId, 'token': token});
 
@@ -69,7 +70,9 @@ Future<http.Response> updateAccount(
     return http.Response.bytes([], 500);
   }
 
-  final url = Uri.parse('http://localhost:3000/api/updateAccount');
+  dynamic domain = dotenv.env['DOMAIN'];
+
+  final url = Uri.parse('$domain/api/updateAccount');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'id': accountId,
@@ -95,8 +98,8 @@ Future<List<Account>> getAccounts() async {
   if (token.isEmpty) {
     return [];
   }
-
-  final url = Uri.parse('http://localhost:3000/api/getAccounts/');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/getAccounts/');
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'token': token});
 

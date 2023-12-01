@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:cyber_vault/models/credit_card.dart';
 import 'package:http/http.dart' as http;
 import 'package:cyber_vault/services/local_session.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // addCreditCard
 Future<http.Response> addCreditCard(
@@ -22,7 +23,9 @@ Future<http.Response> addCreditCard(
   String cardExpiryMonth = cardExpiryDate.substring(0, 2);
   String cardExpiryYear = cardExpiryDate.substring(3, 5);
 
-  final url = Uri.parse('http://localhost:3000/api/addCreditCard');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/addCreditCard');
+
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'cardTitle': cardTitle,
@@ -61,7 +64,9 @@ Future<http.Response> updateCreditCard(
   String cardExpiryMonth = cardExpiryDate.substring(0, 2);
   String cardExpiryYear = cardExpiryDate.substring(3, 5);
 
-  final url = Uri.parse('http://localhost:3000/api/updateCreditCard');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/updateCreditCard');
+
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({
     'cardTitle': cardTitle,
@@ -89,7 +94,9 @@ Future<http.Response> deleteCreditCard(String cardId) async {
     return http.Response.bytes([], 500);
   }
 
-  final url = Uri.parse('http://localhost:3000/api/deleteCreditCard');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/deleteCreditCard');
+
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'id': cardId, 'token': token});
 
@@ -106,7 +113,9 @@ Future<List<CreditCard>> getCreditCards() async {
     return [];
   }
 
-  final url = Uri.parse('http://localhost:3000/api/getCreditCards/');
+  dynamic domain = dotenv.env['DOMAIN'];
+  final url = Uri.parse('$domain/api/getCreditCards/');
+
   final headers = {'Content-Type': 'application/json'};
   final body = jsonEncode({'token': token});
 

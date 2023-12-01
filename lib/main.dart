@@ -18,6 +18,7 @@ import 'package:cyber_vault/pages/login_page.dart';
 import 'package:cyber_vault/pages/signup_page.dart';
 import 'package:cyber_vault/pages/add_account_page.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future main() async {
   // Initialize sqflite for desktop
@@ -25,6 +26,7 @@ Future main() async {
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   }
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -36,7 +38,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late Future<String?> initialRouteFuture;
+  late Future<String> initialRouteFuture;
 
   @override
   void initState() {
@@ -44,8 +46,8 @@ class _MyAppState extends State<MyApp> {
     initialRouteFuture = checkToken();
   }
 
-  Future<String?> checkToken() async {
-    String token = await getTokenFromDb();
+  Future<String> checkToken() async {
+    String? token = await getTokenFromDb();
 
     if (token.isEmpty) {
       return '/login';
@@ -71,14 +73,13 @@ class _MyAppState extends State<MyApp> {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Cyber Vault',
-        home: FutureBuilder<String?>(
+        home: FutureBuilder<String>(
           future: initialRouteFuture,
           builder: (context, snapshot) {
             // While the future is not resolved yet, show the splash screen
             if (snapshot.connectionState != ConnectionState.done) {
               return const SplashScreen(); // Your custom splash screen widget
             }
-
             // Once the future is resolved, decide which screen to show
             if (snapshot.data == '/home') {
               return const ShellPage(); // If the token is valid, go to the home screen

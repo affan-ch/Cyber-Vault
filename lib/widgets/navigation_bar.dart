@@ -1,6 +1,6 @@
 import 'package:cyber_vault/pages/authenticator_page.dart';
 import 'package:cyber_vault/pages/generator_page.dart';
-import 'package:cyber_vault/pages/home_page.dart';
+// import 'package:cyber_vault/pages/home_page.dart';
 import 'package:cyber_vault/pages/settings_page.dart';
 import 'package:cyber_vault/pages/vault_page.dart';
 import 'package:flutter/material.dart';
@@ -27,11 +27,11 @@ class _NavigationExampleState extends State<NavigationExample> {
         },
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.home_rounded),
-            selectedIcon: Icon(Icons.home_filled),
-            label: 'Home',
-          ),
+          // NavigationDestination(
+          //   icon: Icon(Icons.home_rounded),
+          //   selectedIcon: Icon(Icons.home_filled),
+          //   label: 'Home',
+          // ),
           NavigationDestination(
             icon: Icon(Icons.key_outlined),
             selectedIcon: Icon(Icons.key_rounded),
@@ -55,7 +55,7 @@ class _NavigationExampleState extends State<NavigationExample> {
         ],
       ),
       body: <Widget>[
-        const HomePage(),
+        // const HomePage(),
         const VaultPage(),
         const AuthenticatorPage(),
         const GeneratorPage(),
