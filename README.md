@@ -265,3 +265,4 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 - Special thanks to the [Flutter community](https://flutter.dev/community) for their support and resources.
 - Thanks to the [Material Design 3 community](https://m3.material.io/) for their design guidance. 
 - We are grateful for the services provided by [Firebase](https://firebase.google.com/) for making our project possible.
+  
