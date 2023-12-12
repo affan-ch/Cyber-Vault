@@ -35,6 +35,7 @@ Cyber Vault provides a secure and user-friendly vault to store and manage a wide
 -  **Biometric Authentication:** Users have the option to use biometric authentication (e.g., fingerprint, face recognition) for secure login. 
 -  **Two-Factor Authentication (2FA) Integration:** For accounts with 2FA enabled, Cyber Vault includes an integrated authenticator tool that generates One-Time Passwords (OTPs) within the app, enhancing account security. 
 -  **Emergency Access:** In case of emergencies, users have limited offline access to their password data.
+-  **Usability:** Create an intuitive and user-friendly interface for seamless navigation.
 
 ## Functional Requirements: 
 ### User Registration:
